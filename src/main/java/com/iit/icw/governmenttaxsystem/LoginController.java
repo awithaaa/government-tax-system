@@ -22,9 +22,9 @@ public class LoginController {
     protected void handleLoginButton() throws IOException {
         Stage previousStage = (Stage) bgRectangle.getScene().getWindow();
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("dashboard-view.fxml")));
-        previousStage.setScene(new Scene(root,  600, 400));
+        previousStage.setScene(new Scene(root, 1280, 700));
         previousStage.setTitle("Dashboard | Government Tax Department System");
-        previousStage.setMaximized(true);
+        previousStage.centerOnScreen();
         previousStage.show();
     }
 }

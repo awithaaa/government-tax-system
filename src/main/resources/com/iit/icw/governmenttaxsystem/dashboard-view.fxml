@@ -1,48 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="450.0" prefWidth="700.0" stylesheets="" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.iit.icw.governmenttaxsystem.LoginController">
+<AnchorPane prefHeight="700.0" prefWidth="1280.0" style="-fx-background-color: white;" stylesheets="" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.iit.icw.governmenttaxsystem.DashboardController">
     <children>
-        <Rectangle fx:id="bgRectangle" arcHeight="5.0" arcWidth="5.0" fill="#754470" height="83.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="700.0" />
-        <Text fill="WHITE" layoutX="184.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Government Tax">
+        <Rectangle fx:id="bgRectangle" arcHeight="5.0" arcWidth="5.0" fill="#754470" height="83.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1280.0" />
+        <Text fill="WHITE" layoutX="474.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Government Tax" AnchorPane.topAnchor="32.0">
             <font>
                 <Font name="Calibri Bold" size="48.0" />
             </font>
         </Text>
-        <Text fill="#754470" layoutX="151.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Department System">
+        <Text fill="#754470" layoutX="441.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Department System">
             <font>
                 <Font name="Calibri Bold" size="48.0" />
             </font>
         </Text>
-        <TextField layoutX="151.0" layoutY="198.0" prefHeight="40.0" prefWidth="398.0">
-            <font>
-                <Font size="14.0" />
-            </font>
-        </TextField>
-        <Text layoutX="151.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
-            <font>
-                <Font name="Calibri" size="18.0" />
-            </font>
-        </Text>
-        <Text layoutX="151.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
-            <font>
-                <Font name="Calibri" size="18.0" />
-            </font>
-        </Text>
-        <PasswordField layoutX="152.0" layoutY="281.0" prefHeight="40.0" prefWidth="398.0" />
-        <Button fx:id="loginBtn" layoutX="151.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleLoginButton" prefHeight="40.0" prefWidth="398.0" style="-fx-background-color: #754470; -fx-border-radius: 18px;" text="Login" textFill="WHITE">
-            <font>
-                <Font name="Calibri Bold" size="18.0" />
-            </font>
-        </Button>
-        <Line endX="298.0" layoutX="252.0" layoutY="342.0" startX="-100.0" stroke="#aeaeae" />
+      <Line endX="1055.0" layoutX="162.0" layoutY="180.0" startX="-100.0" stroke="#b5b5b5" />
+      <Text layoutX="62.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
+         <font>
+            <Font name="Calibri Bold" size="24.0" />
+         </font>
+      </Text>
+      <Group layoutX="85.0" layoutY="202.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8f8f8" height="166.0" onMouseClicked="#handleAddUserButton" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="170.0">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Rectangle>
+            <ImageView disable="true" fitHeight="95.0" fitWidth="97.0" layoutX="33.0" layoutY="14.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/user.jpg" />
+               </image>
+            </ImageView>
+            <Text fill="#754470" layoutX="31.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Calculate Tax">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </Group>
+      <Group layoutX="327.0" layoutY="202.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8f8f8" height="166.0" onMouseClicked="#handleAddUserButton" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="170.0">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Rectangle>
+            <ImageView disable="true" fitHeight="95.0" fitWidth="97.0" layoutX="33.0" layoutY="14.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/user.jpg" />
+               </image>
+            </ImageView>
+            <Text fill="#754470" layoutX="46.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add User">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </Group>
+      <Group layoutX="582.0" layoutY="202.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f8f8f8" height="166.0" onMouseClicked="#handleAddUserButton" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="170.0">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Rectangle>
+            <ImageView disable="true" fitHeight="95.0" fitWidth="97.0" layoutX="33.0" layoutY="14.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/user.jpg" />
+               </image>
+            </ImageView>
+            <Text fill="#754470" layoutX="46.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add User">
+               <font>
+                  <Font name="Calibri Bold" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </Group>
     </children>
 </AnchorPane>
