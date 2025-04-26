@@ -96,7 +96,7 @@
             <Font name="Calibri" size="18.0" />
          </font>
       </Text>
-      <Button fx:id="nextBtn" layoutX="949.0" layoutY="614.0" mnemonicParsing="false" onAction="#handleNextButton" prefHeight="40.0" prefWidth="215.0" style="-fx-background-color: #bc60b3; -fx-border-radius: 18px;" text="Next" textFill="WHITE">
+      <Button layoutX="949.0" layoutY="614.0" mnemonicParsing="false" onAction="#handleNextButton" prefHeight="40.0" prefWidth="215.0" style="-fx-background-color: #bc60b3; -fx-border-radius: 18px;" text="Next" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>

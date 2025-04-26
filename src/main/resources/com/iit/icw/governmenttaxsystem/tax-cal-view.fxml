@@ -67,7 +67,7 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <Button layoutX="1002.0" layoutY="638.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="215.0" style="-fx-background-color: #bc60b3; -fx-border-radius: 18px;" text="Finish" textFill="WHITE">
+      <Button layoutX="1002.0" layoutY="638.0" mnemonicParsing="false" onAction="#handleFinishButton" prefHeight="40.0" prefWidth="215.0" style="-fx-background-color: #bc60b3; -fx-border-radius: 18px;" text="Finish" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>

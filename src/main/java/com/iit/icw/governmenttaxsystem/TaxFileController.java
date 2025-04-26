@@ -32,9 +32,6 @@ public class TaxFileController implements Initializable {
     private Button browserBtn;
 
     @FXML
-    private Button nextBtn;
-
-    @FXML
     private TextField browserField;
 
     @FXML

@@ -6,9 +6,13 @@ import com.iit.icw.governmenttaxsystem.utils.TaxCalculator;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -16,6 +20,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class TaxCalController implements Initializable {
@@ -92,6 +97,16 @@ public class TaxCalController implements Initializable {
     @FXML
     protected void handleCalculateTax() {
         calculateTax(loadedProfitData);
+    }
+
+    @FXML
+    protected void handleFinishButton() throws IOException {
+        Stage previousStage = (Stage) lossTextField.getScene().getWindow();
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("dashboard-view.fxml")));
+        previousStage.setScene(new Scene(root, 1280, 700));
+        previousStage.setTitle("Dashboard | Government Tax Department System");
+        previousStage.centerOnScreen();
+        previousStage.show();
     }
 
     @FXML
