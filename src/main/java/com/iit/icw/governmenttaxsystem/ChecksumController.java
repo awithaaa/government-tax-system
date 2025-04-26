@@ -135,8 +135,8 @@ public class ChecksumController implements Initializable {
             Stage previousStage = (Stage) totalValidText.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("tax-cal-view.fxml")));
             Parent root = loader.load();
-            ChecksumController checksumController = loader.getController();
-            checksumController.setFile(file);
+            TaxCalController taxCalController = loader.getController();
+            taxCalController.setLoadedData(loadedData);
             previousStage.setScene(new Scene(root, 1280, 700));
             previousStage.setTitle("Tax Calculation | Government Tax Department System");
             previousStage.centerOnScreen();
@@ -151,8 +151,8 @@ public class ChecksumController implements Initializable {
                 Stage previousStage = (Stage) totalValidText.getScene().getWindow();
                 FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("tax-cal-view.fxml")));
                 Parent root = loader.load();
-                ChecksumController checksumController = loader.getController();
-                checksumController.setFile(file);
+                TaxCalController taxCalController = loader.getController();
+                taxCalController.setLoadedData(loadedData);
                 previousStage.setScene(new Scene(root, 1280, 700));
                 previousStage.setTitle("Tax Calculation | Government Tax Department System");
                 previousStage.centerOnScreen();

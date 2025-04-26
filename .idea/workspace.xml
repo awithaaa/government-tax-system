@@ -4,19 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61c57e18-7998-42e1-95bc-1150e2681dce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/iit/icw/governmenttaxsystem/ChecksumController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/iit/icw/governmenttaxsystem/TaxCalController.java" afterDir="false" />
+    <list default="true" id="61c57e18-7998-42e1-95bc-1150e2681dce" name="Changes" comment="feat: update checksum stage">
       <change afterPath="$PROJECT_DIR$/src/main/java/com/iit/icw/governmenttaxsystem/TestApplication.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/iit/icw/governmenttaxsystem/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/iit/icw/governmenttaxsystem/utils/CheckSum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/iit/icw/governmenttaxsystem/img/man-astronaut.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/iit/icw/governmenttaxsystem/tax-cal-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iit/icw/governmenttaxsystem/dto/ProfitTableDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/iit/icw/governmenttaxsystem/utils/TaxCalculator.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/com/iit/icw/governmenttaxsystem/test.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/iit/icw/governmenttaxsystem/TaxFileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iit/icw/governmenttaxsystem/TaxFileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/iit/icw/governmenttaxsystem/checksum-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/iit/icw/governmenttaxsystem/checksum-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/iit/icw/governmenttaxsystem/tax-file-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/iit/icw/governmenttaxsystem/tax-file-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iit/icw/governmenttaxsystem/ChecksumController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iit/icw/governmenttaxsystem/ChecksumController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/iit/icw/governmenttaxsystem/TaxCalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/iit/icw/governmenttaxsystem/TaxCalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/iit/icw/governmenttaxsystem/tax-cal-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/iit/icw/governmenttaxsystem/tax-cal-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,11 +165,24 @@
       <workItem from="1745208591316" duration="130000" />
       <workItem from="1745396452219" duration="4286000" />
       <workItem from="1745577155311" duration="15899000" />
-      <workItem from="1745606867015" duration="21313000" />
+      <workItem from="1745606867015" duration="29996000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: update checksum stage">
+      <option name="closed" value="true" />
+      <created>1745682037760</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1745682037760</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: update checksum stage" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update checksum stage" />
   </component>
 </project>
