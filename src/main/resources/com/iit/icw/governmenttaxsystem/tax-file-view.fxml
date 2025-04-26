@@ -13,17 +13,17 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="1280.0" style="-fx-background-color: white;" stylesheets="" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.iit.icw.governmenttaxsystem.TaxFileController">
     <children>
-        <Button fx:id="browserBtn" layoutX="949.0" layoutY="200.0" mnemonicParsing="false" onAction="#handleChooseFile" prefHeight="40.0" prefWidth="215.0" style="-fx-background-color: #754470; -fx-border-radius: 18px;" text="Browser" textFill="WHITE">
+        <Button fx:id="browserBtn" layoutX="948.0" layoutY="183.0" mnemonicParsing="false" onAction="#handleChooseFile" prefHeight="40.0" prefWidth="215.0" style="-fx-background-color: #754470; -fx-border-radius: 18px;" text="Browser" textFill="WHITE">
             <font>
                 <Font name="Calibri Bold" size="18.0" />
             </font>
         </Button>
-      <TextField fx:id="browserField" layoutX="117.0" layoutY="200.0" prefHeight="40.0" prefWidth="818.0">
+      <TextField fx:id="browserField" layoutX="116.0" layoutY="183.0" prefHeight="40.0" prefWidth="818.0">
          <font>
             <Font size="13.0" />
          </font>
       </TextField>
-      <Text layoutX="117.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select File Location :">
+      <Text layoutX="116.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select File Location :">
          <font>
             <Font name="Calibri" size="18.0" />
          </font>

@@ -10,7 +10,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -26,6 +25,8 @@ import java.util.ResourceBundle;
 public class TaxFileController implements Initializable {
 
     private boolean fileImported = false;
+    private File file;
+    private ObservableList<TableDto> loadedData = FXCollections.observableArrayList();
 
     @FXML
     private Button browserBtn;
@@ -79,22 +80,19 @@ public class TaxFileController implements Initializable {
     protected void handleNextButton() throws IOException {
         if (fileImported) {
             Stage previousStage = (Stage) browserField.getScene().getWindow();
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("checksum-view.fxml")));
+            FXMLLoader loader = new FXMLLoader(Objects.requireNonNull(getClass().getResource("checksum-view.fxml")));
+            Parent root = loader.load();
+            ChecksumController checksumController = loader.getController();
+            checksumController.setFile(file);
             previousStage.setScene(new Scene(root, 1280, 700));
             previousStage.setTitle("Checksum | Government Tax Department System");
             previousStage.centerOnScreen();
             previousStage.show();
         } else {
-            Dialog<String> dialog = new Dialog<>();
-            dialog.setTitle("File Information");
-            dialog.setContentText("File has not been imported!");
-            dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
-            dialog.showAndWait();
-
-//            Alert alert = new Alert(Alert.AlertType.ERROR);
-//            alert.setTitle("File Import");
-//            alert.setContentText("File has not been imported!");
-//            alert.showAndWait();
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("File Information");
+            alert.setContentText("File has not been imported!");
+            alert.showAndWait();
         }
     }
 
@@ -110,8 +108,7 @@ public class TaxFileController implements Initializable {
 
         Stage stage = (Stage) browserBtn.getScene().getWindow();
 
-        // Show open file dialog
-        File file = fileChooser.showOpenDialog(stage);
+        file = fileChooser.showOpenDialog(stage);
         if (file != null) {
             fileImported = true;
             browserField.setText(file.getAbsolutePath());
@@ -127,7 +124,6 @@ public class TaxFileController implements Initializable {
     }
 
     private void initialData(File file) {
-        ObservableList<TableDto> loadedData = FXCollections.observableArrayList();
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
             String line;
@@ -143,15 +139,15 @@ public class TaxFileController implements Initializable {
 
                 if (tokens.length >= 9) {
                     TableDto dto = new TableDto(
-                            tokens[0].trim(), // lineId
-                            tokens[1].trim(), // itemCode
-                            tokens[2].trim(), // intPrice
-                            tokens[3].trim(), // discount
-                            tokens[4].trim(), // salePrice
-                            tokens[5].trim(), // qty
-                            tokens[6].trim(), // billId
-                            tokens[7].trim(), // lineTotal
-                            tokens[8].trim()  // checkSum
+                            tokens[0].trim(),
+                            tokens[1].trim(),
+                            tokens[2].trim(),
+                            tokens[3].trim(),
+                            tokens[4].trim(),
+                            tokens[5].trim(),
+                            tokens[6].trim(),
+                            tokens[7].trim(),
+                            tokens[8].trim()
                     );
                     loadedData.add(dto);
                     lineTotal += 1;
