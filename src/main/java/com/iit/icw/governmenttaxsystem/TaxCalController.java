@@ -14,8 +14,6 @@ import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import javax.swing.*;
-import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -26,7 +24,6 @@ import java.util.ResourceBundle;
 public class TaxCalController implements Initializable {
 
     private final TaxCalculator taxCalculator = new TaxCalculator();
-    private ObservableList<TableDto> loadedData = FXCollections.observableArrayList();
     private ObservableList<ProfitTableDto> loadedProfitData = FXCollections.observableArrayList();
 
     double loss = 0;
@@ -141,15 +138,22 @@ public class TaxCalController implements Initializable {
                 String lossLine = String.join(",", "Loss :", String.valueOf(loss), "", "", "", "", "", "", "");
                 writer.write(lossLine + "\n");
 
-                String taxRateLine = String.join(",", "Profit :", taxRateTextField.getText(), "", "", "", "", "", "", "");
+                String taxRateLine = String.join(",", "Tax rate :", taxRateTextField.getText() + " %", "", "", "", "", "", "", "");
                 writer.write(taxRateLine + "\n");
 
-                String taxLine = String.join(",", "Profit :", String.valueOf(tax), "", "", "", "", "", "", "");
+                String taxLine = String.join(",", "Final Tax :", String.valueOf(tax), "", "", "", "", "", "", "");
                 writer.write(taxLine + "\n");
 
-                new Alert(Alert.AlertType.INFORMATION, "CSV exported successfully!").showAndWait();
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Tax Report");
+                alert.setContentText("CSV report exported successfully!");
+                alert.showAndWait();
+
             } catch (IOException e) {
-                new Alert(Alert.AlertType.ERROR, "Error saving CSV: " + e.getMessage()).showAndWait();
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Tax Report");
+                alert.setContentText("Error saving CSV: " + e.getMessage());
+                alert.showAndWait();
             }
         }
     }
@@ -204,25 +208,31 @@ public class TaxCalController implements Initializable {
         loss = 0;
         profit = 0;
         tax = 0;
-        for (ProfitTableDto r: loadedData) {
-            if (r.getProfitType().equals("Loss")) {
-                loss = loss + Math.abs(Double.parseDouble(r.getProfitAmount()));
-            } else {
-                profit = profit + Double.parseDouble(r.getProfitAmount());
+        try {
+            for (ProfitTableDto r: loadedData) {
+                if (r.getProfitType().equals("Loss")) {
+                    loss = loss + Math.abs(Double.parseDouble(r.getProfitAmount()));
+                } else {
+                    profit = profit + Double.parseDouble(r.getProfitAmount());
+                }
             }
+            lossTextField.setText(String.valueOf(loss));
+            profitTextField.setText(String.valueOf(profit));
+            if (taxRateTextField.getText().isEmpty()) {
+                tax = taxCalculator.calculateTax(profit, loss, 0);
+            } else {
+                tax = taxCalculator.calculateTax(profit, loss, Double.parseDouble(taxRateTextField.getText()));
+            }
+            finalTaxTextField.setText(String.valueOf(tax));
+        } catch (NumberFormatException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Something went wrong!");
+            alert.showAndWait();
         }
-        lossTextField.setText(String.valueOf(loss));
-        profitTextField.setText(String.valueOf(profit));
-        if (taxRateTextField.getText() == "") {
-            tax = taxCalculator.calculateTax(profit, loss, 0);
-        } else {
-            tax = taxCalculator.calculateTax(profit, loss, Double.parseDouble(taxRateTextField.getText()));
-        }
-        finalTaxTextField.setText(String.valueOf(tax));
+
     }
 
     public void setLoadedData(ObservableList<TableDto> loadedData) {
-        this.loadedData = loadedData;
         initialData(loadedData);
     }
 }

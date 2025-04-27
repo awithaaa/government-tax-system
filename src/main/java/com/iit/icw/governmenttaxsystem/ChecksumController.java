@@ -184,14 +184,12 @@ public class ChecksumController implements Initializable {
         intPrice.setOnEditCommit(event -> {
             TableDto tableRow = event.getTableView().getItems().get(event.getTablePosition().getRow());
             tableRow.setIntPrice(event.getNewValue());
-//            tableRow.setLineTotal(String.valueOf(Integer.parseInt(event.getNewValue()) - Integer.parseInt(tableRow.getDiscount())));
         });
 
         discount.setCellFactory(TextFieldTableCell.<TableDto>forTableColumn());
         discount.setOnEditCommit(event -> {
             TableDto tableRow = event.getTableView().getItems().get(event.getTablePosition().getRow());
             tableRow.setDiscount(event.getNewValue());
-//            tableRow.setLineTotal(String.valueOf(Integer.parseInt(event.getNewValue()) - Integer.parseInt(tableRow.getDiscount())));
         });
 
         salePrice.setCellFactory(TextFieldTableCell.<TableDto>forTableColumn());
