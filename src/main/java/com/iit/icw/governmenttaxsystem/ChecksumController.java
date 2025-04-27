@@ -77,7 +77,7 @@ public class ChecksumController implements Initializable {
         String lines = "Invalid Records : ";
         ArrayList<String> invalidRecordsId = new ArrayList<>();
         for (TableDto r: loadedData) {
-            String[] tokens = {r.getLineId(), r.getItemCode(), r.getIntPrice(), r.getDiscount(), r.getSalePrice(), r.getQty(), r.getLineTotal(),};
+            String[] tokens = {r.getItemCode(), r.getIntPrice(), r.getDiscount(), r.getSalePrice(), r.getQty(), r.getLineTotal(),};
             int currentChecksumValue = Integer.parseInt(r.getCheckSum());
             int checkSumValue = checkSum.totalChecksum(tokens) ;
             if (currentChecksumValue == checkSumValue) {
